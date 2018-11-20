@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="053e5bf7-bfb9-48ca-97a7-b2294765c1c6" name="Default Changelist" comment="all">
+    <list default="true" id="053e5bf7-bfb9-48ca-97a7-b2294765c1c6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/boot.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ubuntu-xenial-16.04-cloudimg-console.log" beforeDir="false" afterPath="$PROJECT_DIR$/ubuntu-xenial-16.04-cloudimg-console.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,6 +55,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="Dockerfile" value="1" />
           <entry key="Vagrantfile" value="3" />
           <entry key="cfg" value="1" />
           <entry key="db" value="1" />
@@ -68,6 +68,7 @@
           <entry key="pot" value="1" />
           <entry key="pub" value="2" />
           <entry key="py" value="121" />
+          <entry key="sh" value="1" />
           <entry key="txt" value="3" />
         </counts>
       </usages-collector>
@@ -76,7 +77,7 @@
           <entry key=".env file" value="1" />
           <entry key="HTML" value="90" />
           <entry key="Log" value="1" />
-          <entry key="PLAIN_TEXT" value="17" />
+          <entry key="PLAIN_TEXT" value="19" />
           <entry key="Python" value="121" />
           <entry key="SQL" value="1" />
         </counts>
@@ -89,7 +90,7 @@
           <entry key="flaskenv" value="1" />
           <entry key="html" value="4853" />
           <entry key="py" value="17447" />
-          <entry key="txt" value="13" />
+          <entry key="txt" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -97,7 +98,7 @@
           <entry key=".env file" value="6" />
           <entry key="BuildoutCfg" value="12" />
           <entry key="HTML" value="4841" />
-          <entry key="PLAIN_TEXT" value="236" />
+          <entry key="PLAIN_TEXT" value="251" />
           <entry key="Python" value="17447" />
         </counts>
       </usages-collector>
@@ -108,11 +109,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Vagrantfile">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="108">
               <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dockerfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/boot.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="4" column="73" selection-start-line="4" selection-start-column="73" selection-end-line="4" selection-end-column="73" />
             </state>
           </provider>
         </entry>
@@ -159,8 +178,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/config.py" />
-        <option value="$PROJECT_DIR$/app/templates/users.html" />
         <option value="$PROJECT_DIR$/app/templates/_posts.html" />
         <option value="$PROJECT_DIR$/app/errors.py" />
         <option value="$PROJECT_DIR$/.flaskenv" />
@@ -210,14 +227,16 @@
         <option value="$PROJECT_DIR$/app/main/routes.py" />
         <option value="$PROJECT_DIR$/app/templates/explore.html" />
         <option value="$PROJECT_DIR$/Vagrantfile" />
+        <option value="$PROJECT_DIR$/Dockerfile" />
+        <option value="$PROJECT_DIR$/boot.sh" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="8" />
-    <option name="y" value="364" />
-    <option name="width" value="1272" />
-    <option name="height" value="432" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="30" />
+    <option name="y" value="72" />
+    <option name="width" value="1280" />
+    <option name="height" value="1000" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -364,7 +383,21 @@
       <option name="project" value="LOCAL" />
       <updated>1542616761565</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="all">
+      <created>1542705994671</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1542705994671</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Dockerfile add">
+      <created>1542708632498</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1542708632498</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -377,7 +410,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="1000" extended-state="6" />
+    <frame x="30" y="72" width="1280" height="1000" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48796147" side_tool="true" visible="true" weight="0.18456642" />
       <window_info id="Structure" order="1" sideWeight="0.5120385" side_tool="true" weight="0.19172633" />
@@ -422,7 +456,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="all" />
-    <option name="LAST_COMMIT_MESSAGE" value="all" />
+    <MESSAGE value="Dockerfile add" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dockerfile add" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app.db">
@@ -701,6 +736,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/boot.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="73" selection-start-line="4" selection-start-column="73" selection-end-line="4" selection-end-column="73" />
         </state>
       </provider>
     </entry>
