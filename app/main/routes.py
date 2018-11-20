@@ -185,3 +185,8 @@ def translate_text():
                                       request.form['source_language'],
                                       request.form['dest_language'])})
 
+
+@bp.route('/user/<username>/popup')
+def user_popup(username):
+    user = User.query.filter_by(username=username).first_or_404()
+    return render_template('user_popup.html', user=user)
