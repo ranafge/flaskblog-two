@@ -21,3 +21,5 @@ USER microblog
 
 EXPOSE 5000
 ENTRYPOINT ["./boot.sh"]
+
+RUN venv/bin/pip install gunicorn pymysql
