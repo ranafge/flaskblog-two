@@ -7,6 +7,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import jwt
 from app import db, login
 from app.search import add_to_index, remove_from_index, query_index
+import json
 
 
 class SearchableMixin(object):
@@ -57,15 +58,6 @@ followers = db.Table(
     db.Column('follower_id', db.Integer, db.ForeignKey('user.id')),
     db.Column('followed_id', db.Integer, db.ForeignKey('user.id'))
 )
-class Message(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    sender_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    recipient_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    body = db.Column(db.String(150))
-    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-
-    def __repr__(self):
-        return "<Message {}>".format(self.body)
 
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -87,6 +79,9 @@ class User(UserMixin, db.Model):
     messages_received = db.relationship('Message',
                                         foreign_keys='Message.recipient_id',
                                         backref='recipient', lazy='dynamic')
+    notifications = db.relationship('Notification', backref='user', lazy='dynamic')
+
+
     last_message_read_time = db.Column(db.DateTime)
 
 
@@ -96,6 +91,12 @@ class User(UserMixin, db.Model):
 
     def __repr__(self):
         return '<User {}>'.format(self.username)
+
+    def add_notification(self, name, data):
+        self.notifications.filter_by(name=name).delete()
+        n = Notification(name=name, payload_json=json.dumps(data), user=self)
+        db.session.add(n)
+        return n
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
@@ -160,8 +161,27 @@ class Post(SearchableMixin, db.Model):
         return '<Post {}>'.format(self.body)
 
 
+class Message(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    sender_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    recipient_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    body = db.Column(db.String(150))
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
 
 
+    def __repr__(self):
+        return "<Message {}>".format(self.body)
+
+
+class Notification(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(128), index=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    timestamp = db.Column(db.Float, index=True, default=time)
+    payload_json = db.Column(db.Text)
+
+    def get_data(self):
+        return json.loads(str(self.payload_json))
 
 
 
